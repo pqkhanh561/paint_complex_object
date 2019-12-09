@@ -1,0 +1,11 @@
+* AbstractDrawable
+	+ Polygon
+		Point
+
+
+		Child:
+		MyRectangle
+		MyTriangle
+
+	+ Ellipse
+		Circle

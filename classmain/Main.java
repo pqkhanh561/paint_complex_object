@@ -5,11 +5,12 @@ import java.awt.Rectangle;
 
 public class Main{
 	JFrame frame;
-	Object ob;
+	DrawObject ob;
 
 	public Main(){
-		ob = new Object(new Polygon());
-		System.out.println(ob);
+		MyShape poly= new Polygon();
+		ob = new DrawObject(poly);
+		//System.out.println(ob);
 		Gui();
 	}
 
@@ -31,8 +32,8 @@ public class Main{
 	public class DrawPanel extends JPanel{
 		public void paintComponent(Graphics g){
 			Graphics2D g2d = (Graphics2D) g.create();
-			ob.draw(g2d);
-			//g2d.draw(new Rectangle(10,10,50,50));
+			//ob.draw(g2d);
+			g2d.draw(new Rectangle(10,10,50,50));
 		}
 	}
 }

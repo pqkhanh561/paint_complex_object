@@ -4,11 +4,11 @@ import java.awt.Graphics2D;
 import java.awt.Graphics;
 import java.lang.String;
 
-public class Object{
-	private  List<MyShape> arrShape= null;
-	private String func = null;
+public class DrawObject{
+	private  ArrayList<MyShape> arrShape = new ArrayList<MyShape>();
+	private String func;
 	
-	public Object(MyShape shape){
+	public DrawObject(MyShape shape){
 		arrShape.add(shape);
 		func = "1";
 	}

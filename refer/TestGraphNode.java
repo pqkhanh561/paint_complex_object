@@ -72,7 +72,9 @@ public class TestGraphNode {
                             dragged = node;
                             // Adjust for the different between the top/left corner of the
                             // node and the point it was clicked...
-                            offset = new Point(node.getBounds().x - e.getX(), node.getBounds().y - e.getY());
+                            System.out.println(node.getBounds().x + " " + node.getBounds().y); 
+			    offset = new Point(node.getBounds().x - e.getX(), node.getBounds().y - e.getY());
+			    System.out.println(offset);
                             // Highlight the clicked node
                             repaint();
                             break;

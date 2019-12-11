@@ -19,9 +19,9 @@ public class MyEllipse extends MyShape{
 	}
 
 	@Override
-	public Point setLocation(Point start, Point end){
-		Point point = this.getShape().getBounds();
-		point.translate(start.x - end.x, start.y - end.y);
+	public void setLocation(Point start, Point end){
+		Point point = this.getShape().getBounds().getLocation();
+		point.translate(- start.x + end.x, - start.y + end.y);
 		this.x = point.x;
 		this.y = point.y;
 	}

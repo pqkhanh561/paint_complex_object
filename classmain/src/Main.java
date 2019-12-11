@@ -10,8 +10,8 @@ public class Main{
 	ArrayList<DrawObject> ListObject = new ArrayList<DrawObject>();
 
 	public Main(){
-		//MyShape poly= new MyRect(new Point[]{new Point(0,0), new Point(10,50)});
-		MyShape poly= new MyCircle(50,50,50);
+		MyShape poly= new MyRect(new Point[]{new Point(0,0), new Point(10,50)});
+		//MyShape poly= new MyCircle(50,50,50);
 		ListObject.add(new DrawObject(poly));
 		//System.out.println(ob);
 		Gui();
@@ -80,6 +80,7 @@ public class Main{
 			for (DrawObject ob : ListObject){
 				ob.draw(g2d);
 			}
+			g2d.dispose();
 			//ob.setSize();
 			//ob.draw(g2d);
 			//g2d.draw(new Rectangle(10,10,50,50));

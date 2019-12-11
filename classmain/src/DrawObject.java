@@ -1,7 +1,5 @@
+import java.awt.*;
 import java.util.*;
-import java.awt.Shape;
-import java.awt.Graphics2D;
-import java.awt.Graphics;
 import java.lang.String;
 
 public class DrawObject{
@@ -21,6 +19,11 @@ public class DrawObject{
 		if (arrShape.size() == 1){
 			System.out.println(arrShape.get(0).getShape());
 			g.draw(arrShape.get(0).getShape());
+		}
+	}
+	public void setLocation(Point startPoint, Point endPoint){
+		for(int i =0; i<arrShape.size();i++){
+			arrShape.get(i).setLocation(startPoint, endPoint);
 		}
 	}
 

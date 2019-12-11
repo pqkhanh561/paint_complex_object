@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.*;
 import java.awt.Shape;
 import java.awt.Graphics2D;
@@ -32,4 +33,13 @@ public class DrawObject{
 			g.draw(arrShape.get(0).getShape());
 		}
 	}
+	public void setLocation(Point startPoint, Point endPoint){
+		for(int i =0; i<arrShape.size();i++){
+			arrShape.get(i).setLocation(startPoint, endPoint);
+		}
+	}
+
+	public void joinShape(MyShape shape){
+		arrShape.add(shape);
+	}	
 }

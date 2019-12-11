@@ -8,8 +8,8 @@ public class Main{
 	DrawObject ob;
 
 	public Main(){
-		//MyShape poly= new MyRect(new Point[]{new Point(0,0), new Point(10,50)});
-		MyShape poly= new MyCircle(50,50,500); 
+		MyShape poly= new MyRect(new Point[]{new Point(0,0), new Point(10,50)});
+		//MyShape poly= new MyCircle(50,50,500);
 		ob = new DrawObject(poly);
 		//System.out.println(ob);
 		Gui();

@@ -17,4 +17,14 @@ public class MyPolygon extends MyShape {
 	return(Pol);
     }
 
+    @Override
+    public void setLocation(Point startPoint, Point endPoint){
+        for (int i =0 ; i<Position.length;i++){
+            int dx = startPoint.x - endPoint.x;
+            int dy = startPoint.y - endPoint.y;
+            Position[i].translate(dx,dy);
+        }
+
+    }
+
 }

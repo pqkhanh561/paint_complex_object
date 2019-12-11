@@ -20,7 +20,7 @@ public class DrawObject{
 	public void draw(Graphics2D g){
 		if (arrShape.size() == 1){
 			System.out.println(arrShape.get(0).getShape());
-			//g.draw(arrShape.get(0).getShape());
+			g.draw(arrShape.get(0).getShape());
 		}
 	}
 

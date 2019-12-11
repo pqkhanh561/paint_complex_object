@@ -6,6 +6,9 @@ public class MyPolygon extends MyShape {
         this.Position = point_arr;
     }
 
+    public void setpoint(Point[] point_arr){
+        this.Position = point_arr;
+    }
 
     @Override
     public Shape getShape (){

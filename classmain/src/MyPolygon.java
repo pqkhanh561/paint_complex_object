@@ -20,13 +20,13 @@ public class MyPolygon extends MyShape {
     }
 
     @Override
-    public void setLocation(Point startPoint, Point endPoint){
-        for (int i =0 ; i<Position.length;i++){
-            int dx = startPoint.x - endPoint.x;
-            int dy = startPoint.y - endPoint.y;
-            Position[i].translate(dx,dy);
+    public void setLocation(Point offset, Point end){
+        int baseX = - Position[0].x + (end.x + offset.x);
+        int baseY = - Position[0].y + (end.y + offset.y);
+        for (int i =0; i<Position.length;i++){
+            this.Position[i].x += baseX;
+            this.Position[i].y += baseY;
         }
-
     }
 
 }

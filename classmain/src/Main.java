@@ -5,6 +5,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+
 import java.util.ArrayList;
 
 public class Main{
@@ -13,6 +14,7 @@ public class Main{
 
 	public Main(){
 		//MyShape poly= new MySquare(new Point[]{new Point(5,5), new Point(100,500)});
+		//MyShape poly = new MyPolygon(new Point[]{new Point(5,5), new Point(100,500), new Point(200,700)});
 		MyShape poly= new MyCircle(50,50,50);
 		ListObject.add(new DrawObject(poly));
 		//system.out.println(ob);
@@ -60,6 +62,8 @@ public class Main{
 						System.out.println("Object is clicked");
 						dragged = ob;
 						Rectangle bounds = ob.getArea().getBounds();
+						//offset = new Point[]{new Point(bounds.x - e.getX(),bounds.y - e.getY()), new Point()};
+						//offset	= new Point(bounds.)
 						offset = new Point(bounds.x - e.getX(),bounds.y - e.getY());
 						repaint();
 						break;

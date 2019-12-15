@@ -11,12 +11,19 @@ import java.lang.String;
 
 public class DrawObject{
 	private  ArrayList<MyShape> arrShape = new ArrayList<MyShape>();
-	private String func;
+	private ArrayList<String>func = new ArrayList<String>();
 	
 	public DrawObject(MyShape shape){
 		arrShape.add(shape);
-		func = "1";
+		func = " ";
 	}
+
+	public DrawObject(ArrayList<MyShape> arrShape, String func){ 
+		this.arrShape = arrShape;
+		this.func = func;
+	}
+	
+
 	
 	public Area getArea(){
 		return new Area(arrShape.get(0).getShape());
@@ -32,6 +39,9 @@ public class DrawObject{
 //			System.out.println(arrShape.get(0).getShape());
 			g.draw(arrShape.get(0).getShape());
 		}
+		else{
+			
+		}
 	}
 	public void setLocation(Point startPoint, Point endPoint){
 		for(int i =0; i<arrShape.size();i++){
@@ -41,5 +51,23 @@ public class DrawObject{
 
 	public void joinShape(MyShape shape){
 		arrShape.add(shape);
+	}
+
+	public ArrayList<MyShape> getarr(){
+		return(arrShape);
+	}
+
+	public String getfunc(){
+		return(func);
+	}
+	
+	//TODO: 1: union
+	public DrawObject union(DrawObject shape){
+		ArrayList<MyShape> arrShape_tmp = new ArrayList<MyShape>();
+		arrShape_tmp.addAll(arrShape);
+		arrShape_tmp.addAll(shape.getarr());
+		String func_tmp = "(" + func + ")+("+ shape.getfunc() + ")";
+		DrawObject tmp = new DrawObject(arrShape_tmp, func_tmp);
+		return(tmp);
 	}	
 }

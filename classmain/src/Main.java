@@ -14,8 +14,10 @@ public class Main{
 
 	public Main(){
 		//MyShape poly= new MySquare(new Point[]{new Point(5,5), new Point(100,500)});
-		//MyShape poly = new MyPolygon(new Point[]{new Point(5,5), new Point(100,500), new Point(200,700)});
-		MyShape poly= new MyCircle(50,50,50);
+		MyShape poly = new MyPolygon(new Point[]{new Point(5,5), new Point(100,500), new Point(200,220)});
+		MyShape cir= new MyCircle(50,50,50);
+		ListObject.add(new DrawObject(cir));
+
 		ListObject.add(new DrawObject(poly));
 		//system.out.println(ob);
 		gui();
@@ -52,8 +54,12 @@ public class Main{
 		private DrawObject dragged;
 		private Point offset;
 
-		public DrawPanel(){
+		private ArrayList<DrawObject> selected = new ArrayList<DrawObject>();
 
+		public DrawPanel(){
+		//TODO: Need to erase selected
+		DrawObject tmp = ListObject.get(0).union(ListObject.get(1));
+		System.out.println(tmp.getfunc());		
 		addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
@@ -62,9 +68,8 @@ public class Main{
 						System.out.println("Object is clicked");
 						dragged = ob;
 						Rectangle bounds = ob.getArea().getBounds();
-						//offset = new Point[]{new Point(bounds.x - e.getX(),bounds.y - e.getY()), new Point()};
-						//offset	= new Point(bounds.)
 						offset = new Point(bounds.x - e.getX(),bounds.y - e.getY());
+						selected.add(ob);	
 						repaint();
 						break;
 					}	
@@ -98,11 +103,13 @@ public class Main{
 			Graphics2D g2d = (Graphics2D) g.create();
 			for (DrawObject ob : ListObject){
 				ob.draw(g2d);
+				if (selected.contains(ob)){
+					g2d.setColor(Color.BLUE);
+					ob.draw(g2d);
+					g2d.setColor(Color.BLACK);
+				}
 			}
 			g2d.dispose();
-			//ob.setSize();
-			//ob.draw(g2d);
-			//g2d.draw(new Rectangle(10,10,50,50));
 		}
 	}
 }

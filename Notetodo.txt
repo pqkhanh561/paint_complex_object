@@ -1,0 +1,2 @@
+Work with String in Draw Object
+Need to draw

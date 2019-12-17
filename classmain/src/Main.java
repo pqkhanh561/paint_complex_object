@@ -55,11 +55,22 @@ public class Main{
 		private Point offset;
 
 		private ArrayList<DrawObject> selected = new ArrayList<DrawObject>();
+		
+		//Define the operator
+		static final String ADD = "+";
+		static final String SUBTRACT = "-";
+		static final String INTERSECT = "^";
 
 		public DrawPanel(){
+
 		//TODO: Need to erase selected
-		DrawObject tmp = ListObject.get(0).union(ListObject.get(1));
-		System.out.println(tmp.getfunc());		
+		DrawObject tmp = ListObject.get(0).do_math(ListObject.get(1),SUBTRACT);
+		//System.out.println(tmp.getfunc());		
+		ListObject.clear();
+		ListObject.add(tmp);
+
+
+
 		addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {

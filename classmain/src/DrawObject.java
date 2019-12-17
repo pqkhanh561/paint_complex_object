@@ -1,5 +1,5 @@
 import java.awt.*;
-import java.util.*;
+import java.util.*; //ArrayList, Stack, Queue
 import java.awt.Shape;
 import java.awt.Graphics2D;
 import java.awt.geom.Point2D;
@@ -13,21 +13,112 @@ import java.lang.Integer;
 public class DrawObject{
 	private  ArrayList<MyShape> arrShape = new ArrayList<MyShape>();
 	private ArrayList<String>func = new ArrayList<String>();
+	private DrawObject.BalanInverseArea area = null;
 	
 	public DrawObject(MyShape shape){
-		arrShape.add(shape);
-		func.add("1");
+		this.arrShape.add(shape);
+		this.func.add("0");
+		this.area = new BalanInverseArea(func);	
 	}
 
 	public DrawObject(ArrayList<MyShape> arrShape, ArrayList<String> func){ 
 		this.arrShape = arrShape;
 		this.func = func;
+		this.area = new BalanInverseArea(func);	
 	}
 	
 
-	
+	public class BalanInverseArea {
+		private Area balan_area;
+		public BalanInverseArea(ArrayList<String> Infix){
+			if (Infix.size() > 1){
+				ArrayList<String> postfix = changeToInverse(Infix);
+				balan_area = createAreaFromPostfix(postfix);
+			}
+			else{
+				balan_area = new Area(arrShape.get(Integer.parseInt(Infix.get(0))).getShape());
+			}
+		}
+
+		private Area getArea(){
+			return(balan_area);
+		}
+
+		private Area do_Math(Area a1, Area a2, String action){
+			if (action == "^"){
+				a1.intersect(a2);
+			}
+			else if (action == "-"){
+				a1.subtract(a2);
+			}
+			else {
+				a1.add(a2);
+			}
+			return(a1);
+
+		}
+		
+		private Area createAreaFromPostfix(ArrayList<String> post){
+			Stack<Area> stack = new Stack<Area>();
+			System.out.println(arrShape.size());
+			System.out.println(post);
+			for (String s: post){
+				if (isNumeric(s)){
+					//Push shape to stack
+					stack.push(new Area(arrShape.get(Integer.parseInt(s)).getShape()));
+				}
+				else{
+					stack.push(do_Math(stack.pop(), stack.pop(), s));
+				}
+			}
+			return(stack.pop());
+		}
+
+
+		private ArrayList<String> changeToInverse(ArrayList<String> Infix){
+			ArrayList<String> res =  new ArrayList<String>();
+			Stack<String> stack = new Stack<String>(); 
+			for (String s : Infix){
+				if (isNumeric(s)){
+					res.add(s);
+				}
+				else if (s != ")"){
+					if (stack.empty()){
+						stack.push(s);
+					}
+					else {
+						if (checkImportant(s, stack.peek())){
+							stack.push(s);
+						}
+						else{
+							res.add(stack.pop());
+							stack.push(s);
+						}	
+					}
+				}
+				else { //")"
+					while (stack.peek() != "("){
+						res.add(stack.pop());
+					}
+					stack.pop();
+				}
+
+			}
+			if (stack.empty() == false) res.add(stack.pop());
+			return(res);	
+		}
+		
+
+		//check if s1 > s2
+		private boolean checkImportant(String s1, String s2){
+			if (s1 == "(" && s2 == "(") return false;
+			if (s1 == "(") return true;
+			return false;
+		}
+	}	
 	public Area getArea(){
-		return new Area(arrShape.get(0).getShape());
+		//TODO: GET Func
+		return(area.getArea()); 
 	};	
 
 	public boolean contains(Point p){
@@ -36,13 +127,8 @@ public class DrawObject{
 	}	
 
 	public void draw(Graphics2D g){
-		if (arrShape.size() == 1){
-//			System.out.println(arrShape.get(0).getShape());
-			g.draw(arrShape.get(0).getShape());
-		}
-		else{
-			
-		}
+		//TODO: Xoa TH 1
+		g.draw(this.getArea());	
 	}
 	public void setLocation(Point startPoint, Point endPoint){
 		for(int i =0; i<arrShape.size();i++){
@@ -75,7 +161,7 @@ public class DrawObject{
 	}
  	
 	private ArrayList<String> mark_number_again(ArrayList<String> list){
-		int new_index = 0;
+		int new_index = -1;
 		for (int i =0; i<list.size(); i++){
 			if (isNumeric(list.get(i))){
 				new_index+=1;
@@ -87,8 +173,8 @@ public class DrawObject{
 		return(list);
 	}
 	
-	//TODO: 1: union
-	public DrawObject union(DrawObject shape){
+	//TODO: +: union, -: subtract, ^: intersect
+	public DrawObject do_math(DrawObject shape,String action){
 		ArrayList<MyShape> arrShape_tmp = new ArrayList<MyShape>();
 		arrShape_tmp.addAll(arrShape);
 		arrShape_tmp.addAll(shape.getarr());
@@ -98,7 +184,7 @@ public class DrawObject{
 		func_tmp.add("(");
 		func_tmp.addAll(func);
 		func_tmp.add(")");
-		func_tmp.add("+");
+		func_tmp.add(action);
 		func_tmp.add("(");
 		func_tmp.addAll(shape.getfunc());
 		func_tmp.add(")");

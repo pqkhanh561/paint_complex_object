@@ -40,6 +40,17 @@ public class DrawObject{
 			}
 		}
 
+		public void update(){
+			if (arrShape.size() > 1){
+				ArrayList<String> postfix = changeToInverse(func);
+				balan_area = createAreaFromPostfix(postfix);
+			}
+			else{
+				balan_area = new Area(arrShape.get(Integer.parseInt(func.get(0))).getShape());
+			}
+
+		}
+
 		private Area getArea(){
 			return(balan_area);
 		}
@@ -60,8 +71,8 @@ public class DrawObject{
 		
 		private Area createAreaFromPostfix(ArrayList<String> post){
 			Stack<Area> stack = new Stack<Area>();
-			System.out.println(arrShape.size());
-			System.out.println(post);
+			//System.out.println(arrShape.size());
+			//System.out.println(post);
 			for (String s: post){
 				if (isNumeric(s)){
 					//Push shape to stack
@@ -131,9 +142,13 @@ public class DrawObject{
 		g.draw(this.getArea());	
 	}
 	public void setLocation(Point startPoint, Point endPoint){
-		for(int i =0; i<arrShape.size();i++){
-			arrShape.get(i).setLocation(startPoint, endPoint);
+		//for(int i =0; i<arrShape.size();i++){
+		//	arrShape.get(i).setLocation(startPoint, endPoint);
+		//}
+		for (MyShape shape: arrShape){
+			shape.setLocation(startPoint, endPoint);
 		}
+		area.update();
 	}
 
 	public void joinShape(MyShape shape){

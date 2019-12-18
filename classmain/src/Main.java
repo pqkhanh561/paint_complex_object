@@ -5,7 +5,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-
+import javax.swing.JPopupMenu;
+import javax.swing.JMenuItem;
 import java.util.ArrayList;
 
 public class Main{
@@ -13,9 +14,10 @@ public class Main{
 	ArrayList<DrawObject> ListObject = new ArrayList<DrawObject>();
 
 	public Main(){
-		//MyShape poly= new MySquare(new Point[]{new Point(5,5), new Point(100,500)});
-		MyShape poly = new MyPolygon(new Point[]{new Point(5,5), new Point(100,500), new Point(200,220)});
-		MyShape cir= new MyCircle(50,50,50);
+		MyShape poly= new MySquare(new Point[]{new Point(5,5), new Point(100,500)});
+		MyShape cir = new MyPolygon(new Point[]{new Point(5,5), new Point(100,500), new Point(200,220)});
+		//MyShape poly= new MyCircle(55,55,50);
+		//MyShape cir= new MyCircle(50,50,50);
 		ListObject.add(new DrawObject(cir));
 
 		ListObject.add(new DrawObject(poly));
@@ -61,26 +63,63 @@ public class Main{
 		static final String SUBTRACT = "-";
 		static final String INTERSECT = "^";
 
+		class PopUpDemo extends JPopupMenu {
+			JMenuItem anItem;
+			public PopUpDemo() {
+				anItem = new JMenuItem("Click Me!");
+				add(anItem);
+			}
+		}
+
+		class PopClickListener extends MouseAdapter {
+			public void mousePressed(MouseEvent e) {
+				if (e.isPopupTrigger())
+					doPop(e);
+			}
+
+			public void mouseReleased(MouseEvent e) {
+				if (e.isPopupTrigger())
+					doPop(e);
+			}
+
+			private void doPop(MouseEvent e) {
+				PopUpDemo menu = new PopUpDemo();
+				menu.show(e.getComponent(), e.getX(), e.getY());
+			}
+		}
+
 		public DrawPanel(){
 
 		//TODO: Need to erase selected
-		DrawObject tmp = ListObject.get(0).do_math(ListObject.get(1),SUBTRACT);
+		DrawObject tmp = ListObject.get(0).do_math(ListObject.get(1),ADD);
 		//System.out.println(tmp.getfunc());		
 		ListObject.clear();
 		ListObject.add(tmp);
 
 
-
+		addMouseListener(new PopClickListener());
 		addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
+				if (e.getClickCount()==2){
+					for (DrawObject ob: ListObject){
+						if (ob.contains(e.getPoint()) && selected.contains(ob)==false){
+							selected.add(ob);	
+							repaint();
+							break;
+						}
+						else if (ob.contains(e.getPoint()) && selected.contains(ob)==true){
+							selected.remove(ob);
+							repaint();
+							break;
+						}	
+					}
+				}
 				for (DrawObject ob: ListObject){
 					if (ob.contains(e.getPoint())){
-						System.out.println("Object is clicked");
 						dragged = ob;
 						Rectangle bounds = ob.getArea().getBounds();
 						offset = new Point(bounds.x - e.getX(),bounds.y - e.getY());
-						selected.add(ob);	
 						repaint();
 						break;
 					}	

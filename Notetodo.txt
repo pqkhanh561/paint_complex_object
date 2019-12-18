@@ -1,2 +1,12 @@
 Work with String in Draw Object
-Need to draw
+
+
+
+17/12
+Balan need to be done 
+Need to move Area
+Set size of object
+
+Res: 
+Balan work well
+Can move area 

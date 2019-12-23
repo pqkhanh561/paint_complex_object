@@ -237,7 +237,9 @@ public class Main{
                 for (DrawObject ob: ListObject){
                     if (ob.contains(e.getPoint())){
                         dragged = ob;
-                        offset = new Point(e.getX(),e.getY());
+						Rectangle bounds = ob.getArea().getBounds();
+						offset = new Point(bounds.x - e.getX(),bounds.y - e.getY());
+                       // offset = new Point(e.getX(),e.getY());
                         dp.repaint();
                         break;
                     }

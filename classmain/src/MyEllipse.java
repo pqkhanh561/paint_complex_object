@@ -32,8 +32,8 @@ public class MyEllipse extends MyShape{
 
 	}
 */
-	public void setLocation(Point startPoint, Point endPoint){
-		Point offset = new Point(endPoint.x - startPoint.x, endPoint.y - startPoint.y);
+	public void setLocation(Point offset, Point endPoint){
+	//	Point offset = new Point(endPoint.x - startPoint.x, endPoint.y - startPoint.y);
 		int baseX = - this.x + (endPoint.x + offset.x);
 		int baseY = - this.y + (endPoint.y + offset.y);
 		this.x += baseX;

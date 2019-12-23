@@ -1,0 +1,19 @@
+<html>
+<body>
+<pre>
+&lt;!-- polygon.dtd --&gt;
+&lt;!-- DTD for polygon layout --&gt;
+
+&lt;!ELEMENT polygon ( boundingbox, loop* )&gt;
+  
+&lt;!ELEMENT boundingbox ( box )&gt;
+&lt;!ELEMENT box ( coordinate, coordinate )&gt;
+
+&lt;!ELEMENT loop ( coordinate+ )&gt;
+&lt;!ATTLIST loop type ( exterior | hole ) "exterior"&gt;
+
+&lt;!ELEMENT coordinate ( #PCDATA )&gt;
+</pre>
+</hr>
+</body>
+</html>

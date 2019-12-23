@@ -1,5 +1,5 @@
-import java.awt.*;
-import java.util.*; //ArrayList, Stack, Queue
+import java.awt.*; //Color
+import java.util.*; //ArrayList, Stack, Queue, Random
 import java.awt.Shape;
 import java.awt.Graphics2D;
 import java.awt.geom.Point2D;
@@ -14,19 +14,44 @@ public class DrawObject{
 	private  ArrayList<MyShape> arrShape = new ArrayList<MyShape>();
 	private ArrayList<String>func = new ArrayList<String>();
 	private DrawObject.BalanInverseArea area = null;
+	private Color color = null;
 	
 	public DrawObject(MyShape shape){
+		randomColor();
 		this.arrShape.add(shape);
 		this.func.add("0");
 		this.area = new BalanInverseArea(func);	
 	}
 
 	public DrawObject(ArrayList<MyShape> arrShape, ArrayList<String> func){ 
+		randomColor();	
 		this.arrShape = arrShape;
 		this.func = func;
 		this.area = new BalanInverseArea(func);	
 	}
+
+	public void setColor(Color color){
+		this.color = color;
+	}
+
+	public Color getColor(){
+		return(color);
+	}
+
+	public void randomColor(){
+		Random rand = new Random();
+		float r = rand.nextFloat();
+		float g = rand.nextFloat();
+		float b = rand.nextFloat();
+
+		this.color = new Color(r,g,b);
+
+	}
 	
+    public void changeEndPoint(Point p){
+        arrShape.get(0).changeEndPoint(p);
+    };
+
 
 	public class BalanInverseArea {
 		private Area balan_area;
@@ -128,23 +153,25 @@ public class DrawObject{
 		}
 	}	
 	public Area getArea(){
-		//TODO: GET Func
 		return(area.getArea()); 
 	};	
 
 	public boolean contains(Point p){
-		//TODO: Need getArea()
 		return(this.getArea().contains(p));
 	}	
 
-	public void draw(Graphics2D g){
-		//TODO: Xoa TH 1
+	public void fill(Graphics2D g){	
+		g.setColor(color);
+		for (MyShape shape: arrShape){
+			g.fill(shape.getShape());
+		}
+	}
+	public void draw(Graphics2D g, boolean is_filled){
+		if (this.color==null) is_filled=false;
+		if (is_filled) this.fill(g);
 		g.draw(this.getArea());	
 	}
 	public void setLocation(Point startPoint, Point endPoint){
-		//for(int i =0; i<arrShape.size();i++){
-		//	arrShape.get(i).setLocation(startPoint, endPoint);
-		//}
 		for (MyShape shape: arrShape){
 			shape.setLocation(startPoint, endPoint);
 		}
@@ -205,6 +232,9 @@ public class DrawObject{
 		func_tmp.add(")");
 		func_tmp = mark_number_again(func_tmp);
 		DrawObject tmp = new DrawObject(arrShape_tmp, func_tmp);
+		while (tmp.getColor() == this.color || tmp.getColor() == shape.getColor()){
+			tmp.randomColor();	
+		}	
 		return(tmp);
 	}	
 }

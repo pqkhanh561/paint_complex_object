@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Polygon Layout XML document -->
+<!DOCTYPE polygon SYSTEM 'polygon.dtd'>
+
+<polygon>    
+
+  <!-- Polygon Meta-Information -->
+
+  <boundingbox>
+  <box>
+      <coordinate>    0.0     0.0 </coordinate>
+      <coordinate>  600.0   600.0 </coordinate>
+  </box>
+  </boundingbox>
+
+  <!-- Describe exterior loop of bridge cross section .... etc -->
+
+  <loop type="exterior"> 
+        <coordinate>    0.0 300.0 </coordinate>
+        <coordinate>   20.0 300.0 </coordinate>
+        <coordinate>   20.0 280.0 </coordinate>
+        <coordinate>  680.0 280.0 </coordinate>
+        <coordinate>  680.0 300.0 </coordinate>
+        <coordinate>  700.0 300.0 </coordinate>
+        <coordinate>  700.0 260.0 </coordinate>
+        <coordinate>  500.0 240.0 </coordinate>
+        <coordinate>  500.0  20.0 </coordinate>
+        <coordinate>  200.0  20.0 </coordinate>
+        <coordinate>  200.0 240.0 </coordinate>
+        <coordinate>    0.0 260.0 </coordinate>
+  </loop>
+
+  <!-- Describe coordinates of three interior holes .... -->
+
+  <loop type="hole"> 
+        <coordinate>  240.0  140.0 </coordinate>
+        <coordinate>  340.0  140.0 </coordinate>
+        <coordinate>  340.0  240.0 </coordinate>
+        <coordinate>  240.0  240.0 </coordinate>
+  </loop>
+  <loop type="hole"> 
+        <coordinate>  360.0  140.0 </coordinate>
+        <coordinate>  460.0  140.0 </coordinate>
+        <coordinate>  460.0  240.0 </coordinate>
+        <coordinate>  360.0  240.0 </coordinate>
+  </loop>
+  <loop type="hole"> 
+        <coordinate>  240.0  120.0 </coordinate>
+        <coordinate>  460.0   40.0 </coordinate>
+        <coordinate>  240.0   40.0 </coordinate>
+        <coordinate>  460.0  120.0 </coordinate>
+  </loop>
+</polygon>    
+

@@ -8,4 +8,6 @@ abstract public class MyShape{
     //public abstract setLocation(Point startPoint, Point endPoint);
 
     public abstract void setLocation(Point startPoint, Point endPoint);
+
+    public abstract void changeEndPoint(Point p);
 }

@@ -152,6 +152,7 @@ public class DrawObject{
 			return false;
 		}
 	}	
+	
 	public Area getArea(){
 		return(area.getArea()); 
 	};	

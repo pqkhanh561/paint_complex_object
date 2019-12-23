@@ -19,10 +19,14 @@ public class MyEllipse extends MyShape{
 
 	@Override
 	public void setLocation(Point offset, Point end){
-		end.x += offset.x;
+        end.x += offset.x;
 		end.y += offset.y;
+        Point diganol = new Point(x2 - x, y2-y);
 		this.x = end.x;
 		this.y = end.y;
+        this.x2 = x + diganol.x;
+        this.y2 = y + diganol.y;
+
 	}
 
     public void changeEndPoint(Point p){

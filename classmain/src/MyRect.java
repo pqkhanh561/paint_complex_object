@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.geom.Rectangle2D;
 import java.util.Arrays;
 
 
@@ -14,7 +15,8 @@ public class MyRect extends MyShape{
 
     @Override
     public Shape getShape (){
-        return(new Rectangle(Math.min(x,x2), Math.min(y,y2), Math.abs(x -x2), Math.abs(y-y2)));
+        //return(new Rectangle2D.Double(Math.min(x,x2), Math.min(y,y2), Math.abs(x -x2), Math.abs(y-y2)));
+        return(new Rectangle2D.Double(50,50,50,50));
     }
 
     @Override

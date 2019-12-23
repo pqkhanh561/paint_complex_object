@@ -8,13 +8,8 @@ import java.util.ArrayList;
 public class Main{
     JFrame frame;
     ArrayList<DrawObject> ListObject = new ArrayList<DrawObject>();
-    DrawPanel dp;
+    DrawPanel dp = new DrawPanel();;
 
-    private DrawObject dragged;
-    private Point offset;
-
-
-    private ArrayList<DrawObject> selected = new ArrayList<DrawObject>();
 
     public Main(){
         gui();
@@ -33,7 +28,6 @@ public class Main{
                 frame = new JFrame();
                 frame.setLayout(new GridLayout());
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                dp = new DrawPanel();
                 frame.add(dp);
                 frame.setSize(1500,1500);
                 frame.setLocationRelativeTo(null);
@@ -53,6 +47,9 @@ public class Main{
         PopClickListener popup = new PopClickListener();
         MouseAdapter do_draw = new DoDraw();
         private int shape_name;
+        private DrawObject dragged;
+        private Point offset;
+        private ArrayList<DrawObject> selected = new ArrayList<DrawObject>();
 
 
         public DrawPanel(){
@@ -61,11 +58,15 @@ public class Main{
 
             ListObject.add(poly);
             ListObject.add(poly1);
+            poly = poly.do_math(poly1, SUBTRACT);
+            ListObject.clear();
+            ListObject.add(poly);
+
             addMouseListener(cp);
             addMouseMotionListener(cp);
             addMouseListener(popup);
         }
-        
+
         public class PopUpDemo extends JPopupMenu{
             JMenu clickItem;
 
@@ -139,15 +140,15 @@ public class Main{
 
             public void doMathForDrawObject(String func){
                 DrawObject tmp = selected.get(0);
-                        for (DrawObject ob: selected) {
-                            if (selected.indexOf(ob) != 0) {
-                                tmp = tmp.do_math(ob, func);
-                            }
-                        }
-                        ListObject.removeAll(selected);
-                        selected.clear();
-                        ListObject.add(tmp);
-                        dp.repaint();
+                for (DrawObject ob: selected) {
+                    if (selected.indexOf(ob) != 0) {
+                        tmp = tmp.do_math(ob, func);
+                    }
+                }
+                ListObject.removeAll(selected);
+                selected.clear();
+                ListObject.add(tmp);
+                dp.repaint();
             }
         }
 
@@ -189,7 +190,7 @@ public class Main{
                 }
             }
         }
-        
+
         class DoDraw extends MouseAdapter{
             private int start_x, start_y;
 
@@ -215,52 +216,52 @@ public class Main{
                 dp.repaint();
             }
         } 
-        
+
         class ControlPanel extends MouseAdapter{
-                @Override
-                public void mousePressed(MouseEvent e) {
-                    System.out.println(e.getX());
-                    if (e.getClickCount()==2){
-                        for (DrawObject ob: ListObject){
-                            if (ob.contains(e.getPoint()) && selected.contains(ob)==false){
-                                selected.add(ob);
-                                repaint();
-                                break;
-                            }
-                            else if (ob.contains(e.getPoint()) && selected.contains(ob)==true){
-                                selected.remove(ob);
-                                repaint();
-                                break;
-                            }
-                        }
-                    }
+            @Override
+            public void mousePressed(MouseEvent e) {
+                System.out.println(e.getX());
+                if (e.getClickCount()==2){
                     for (DrawObject ob: ListObject){
-                        if (ob.contains(e.getPoint())){
-                            dragged = ob;
-                            Rectangle bounds = ob.getArea().getBounds();
-                            offset = new Point(bounds.x - e.getX(),bounds.y - e.getY());
-                            repaint();
+                        if (ob.contains(e.getPoint()) && selected.contains(ob)==false){
+                            selected.add(ob);
+                            dp.repaint();
+                            break;
+                        }
+                        else if (ob.contains(e.getPoint()) && selected.contains(ob)==true){
+                            selected.remove(ob);
+                            dp.repaint();
                             break;
                         }
                     }
                 }
-
-                @Override
-                public void mouseReleased(MouseEvent e) {
-                    if (dragged != null) {
-                        repaint();
-                    }
-                    dragged = null;
-                    offset = null;
-                }
-
-                @Override
-                public void mouseDragged(MouseEvent e) {
-                    if (dragged != null && offset !=null){
-                        dragged.setLocation(offset, e.getPoint());
-                        repaint();
+                for (DrawObject ob: ListObject){
+                    if (ob.contains(e.getPoint())){
+                        dragged = ob;
+                        Rectangle bounds = ob.getArea().getBounds();
+                        offset = new Point(bounds.x - e.getX(),bounds.y - e.getY());
+                        dp.repaint();
+                        break;
                     }
                 }
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                if (dragged != null) {
+                    dp.repaint();
+                }
+                dragged = null;
+                offset = null;
+            }
+
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                if (dragged != null && offset !=null){
+                    dragged.setLocation(offset, e.getPoint());
+                    dp.repaint();
+                }
+            }
 
         }
 

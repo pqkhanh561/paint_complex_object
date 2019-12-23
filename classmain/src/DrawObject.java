@@ -50,6 +50,7 @@ public class DrawObject{
 	
     public void changeEndPoint(Point p){
         arrShape.get(0).changeEndPoint(p);
+		this.area = new BalanInverseArea(func);
     };
 
 
@@ -104,7 +105,8 @@ public class DrawObject{
 					stack.push(new Area(arrShape.get(Integer.parseInt(s)).getShape()));
 				}
 				else{
-					stack.push(do_Math(stack.pop(), stack.pop(), s));
+					Area pop = stack.pop();
+					stack.push(do_Math(pop, stack.pop(), s));
 				}
 			}
 			return(stack.pop());
@@ -177,10 +179,6 @@ public class DrawObject{
 			shape.setLocation(startPoint, endPoint);
 		}
 		area.update();
-	}
-
-	public void joinShape(MyShape shape){
-		arrShape.add(shape);
 	}
 
 	public ArrayList<MyShape> getarr(){

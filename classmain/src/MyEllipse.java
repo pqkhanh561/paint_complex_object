@@ -14,7 +14,7 @@ public class MyEllipse extends MyShape{
 
 	@Override
 	public Shape getShape(){
-		return(new Ellipse2D.Double(Math.min(x, x2), Math.min(y,y2), Math.abs(x-x2), Math.abs(y-y2)));
+		return(new Ellipse2D.Float(Math.min(x, x2), Math.min(y,y2), Math.abs(x-x2), Math.abs(y-y2)));
 	}
 
 	@Override

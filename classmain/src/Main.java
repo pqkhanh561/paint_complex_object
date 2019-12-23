@@ -53,15 +53,6 @@ public class Main{
 
 
         public DrawPanel(){
-            DrawObject poly = new DrawObject(new MyEllipse(new Point(50,50), new Point(150,150)));
-            DrawObject poly1 = new DrawObject(new MyRect(new Point(20,20), new Point(250,250)));
-
-            ListObject.add(poly);
-            ListObject.add(poly1);
-            poly = poly.do_math(poly1, SUBTRACT);
-            ListObject.clear();
-            ListObject.add(poly);
-
             addMouseListener(cp);
             addMouseMotionListener(cp);
             addMouseListener(popup);
@@ -234,6 +225,7 @@ public class Main{
                         }
                     }
                 }
+
                 for (DrawObject ob: ListObject){
                     if (ob.contains(e.getPoint())){
                         dragged = ob;
@@ -242,6 +234,7 @@ public class Main{
                         break;
                     }
                 }
+                dragged = null; //disable move
             }
 
             @Override

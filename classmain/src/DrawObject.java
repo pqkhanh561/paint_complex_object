@@ -125,13 +125,16 @@ public class DrawObject{
 						stack.push(s);
 					}
 					else {
+						/*
 						if (checkImportant(s, stack.peek())){
 							stack.push(s);
 						}
 						else{
 							res.add(stack.pop());
 							stack.push(s);
-						}	
+						}
+						 */
+						stack.push(s);
 					}
 				}
 				else { //")"
@@ -149,8 +152,8 @@ public class DrawObject{
 
 		//check if s1 > s2
 		private boolean checkImportant(String s1, String s2){
-			if (s1 == "(" && s2 == "(") return false;
-			if (s1 == "(") return true;
+			if (s1 == "(" && s2 == "(") return true;
+			if (s1 == "(") return false;
 			return false;
 		}
 	}	

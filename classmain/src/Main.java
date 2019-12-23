@@ -19,9 +19,9 @@ public class Main{
 
 	//	ListObject.add(new DrawObject(poly));
 	//	//system.out.println(ob);
-		MyShape poly= new MySquare(new Point[]{new Point(5,5), new Point(100,500)});
-		MyShape cir = new MyPolygon(new Point[]{new Point(5,5), new Point(100,500), new Point(200,220)});
-		MyShape poly1 = new MySquare(new Point[]{new Point(20,20), new Point(150,200)});
+		MyShape poly= new MyRect(new Point(5,5), new Point(100,500));
+		MyShape cir = new MyEllipse(new Point(5,5), new Point(100,500));
+		MyShape poly1 = new MyRect(new Point(20,20), new Point(150,200));
 		ListObject.add(new DrawObject(cir));
 		ListObject.add(new DrawObject(poly));
 		ListObject.add(new DrawObject(poly1));
@@ -102,10 +102,12 @@ public class Main{
 				drawEllipse.addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent e) {
+                        /*
                         DoDraw do_draw = new DoDraw("ELLIPSE");
                         dp.addMouseListener(do_draw);
                         dp.addMouseMotionListener(do_draw);
                         dp.removeMouseListener(do_draw);
+                        */
 					}
 				});
 
@@ -343,7 +345,7 @@ public class Main{
         }
     */
 		public DrawPanel(){
-		addMouseListener(new PopClickListener());
+		//addMouseListener(new PopClickListener());
 		addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {

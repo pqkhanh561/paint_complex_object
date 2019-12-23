@@ -112,6 +112,8 @@ public class Main{
         }
 		class DoDraw extends MouseAdapter{
             private int start_x, start_y;
+            private boolean do_draw = FALSE;
+
             public DoDraw(){
 
                 //ListObject.add(new DrawObject(new MyRect(Math.min(start_x, e.getX()), Math.min(start_y, e.getY()) , Math.abs(e.getX() - start_x), Math.abs(e.getY() - start_y))));
@@ -149,8 +151,8 @@ public class Main{
             DoDraw do_draw = new DoDraw();
             addMouseListener(do_draw);
             addMouseMotionListener(do_draw);
-            //addMouseWheelListener(new ResizeHandler());           
-            
+            addMouseWheelListener(new ResizeHandler());           
+           /* 
             addMouseListener(new PopClickListener());
             addMouseListener(new MouseAdapter() {
                 @Override
@@ -200,6 +202,7 @@ public class Main{
                     }
                 }
                 });
+                */
             }
 
 

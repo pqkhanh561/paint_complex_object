@@ -99,6 +99,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="217" y="173" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1577110227487" />
+    <state x="1038" y="259" key="#com.intellij.ide.util.MemberChooser" timestamp="1577116589024">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="1038" y="259" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1577116589024" />
     <state x="897" y="304" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1577110246725">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -108,42 +112,42 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="543" y="273" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1577112563982" />
-    <state width="1340" height="264" key="GridCell.Tab.0.bottom" timestamp="1577114398627">
+    <state width="1340" height="264" key="GridCell.Tab.0.bottom" timestamp="1577118914705">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1397" height="198" key="GridCell.Tab.0.bottom/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1576081756279" />
-    <state width="1340" height="264" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1577114398627" />
-    <state width="1340" height="264" key="GridCell.Tab.0.center" timestamp="1577114398626">
+    <state width="1340" height="264" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1577118914705" />
+    <state width="1340" height="264" key="GridCell.Tab.0.center" timestamp="1577118914705">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1397" height="198" key="GridCell.Tab.0.center/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1576081756278" />
-    <state width="1340" height="264" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1577114398626" />
-    <state width="1340" height="264" key="GridCell.Tab.0.left" timestamp="1577114398626">
+    <state width="1340" height="264" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1577118914705" />
+    <state width="1340" height="264" key="GridCell.Tab.0.left" timestamp="1577118914705">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1397" height="198" key="GridCell.Tab.0.left/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1576081756278" />
-    <state width="1340" height="264" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1577114398626" />
-    <state width="1340" height="264" key="GridCell.Tab.0.right" timestamp="1577114398626">
+    <state width="1340" height="264" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1577118914705" />
+    <state width="1340" height="264" key="GridCell.Tab.0.right" timestamp="1577118914705">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1397" height="198" key="GridCell.Tab.0.right/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1576081756279" />
-    <state width="1340" height="264" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1577114398626" />
-    <state width="1340" height="327" key="GridCell.Tab.1.bottom" timestamp="1577114247961">
+    <state width="1340" height="264" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1577118914705" />
+    <state width="1340" height="327" key="GridCell.Tab.1.bottom" timestamp="1577116133454">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1340" height="327" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1577114247961" />
-    <state width="1340" height="327" key="GridCell.Tab.1.center" timestamp="1577114247961">
+    <state width="1340" height="327" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1577116133454" />
+    <state width="1340" height="327" key="GridCell.Tab.1.center" timestamp="1577116133454">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1340" height="327" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1577114247961" />
-    <state width="1340" height="327" key="GridCell.Tab.1.left" timestamp="1577114247961">
+    <state width="1340" height="327" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1577116133454" />
+    <state width="1340" height="327" key="GridCell.Tab.1.left" timestamp="1577116133454">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1340" height="327" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1577114247961" />
-    <state width="1340" height="327" key="GridCell.Tab.1.right" timestamp="1577114247961">
+    <state width="1340" height="327" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1577116133454" />
+    <state width="1340" height="327" key="GridCell.Tab.1.right" timestamp="1577116133454">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1340" height="327" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1577114247961" />
+    <state width="1340" height="327" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1577116133454" />
     <state x="264" y="161" key="SettingsEditor" timestamp="1577110493134">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -154,15 +158,6 @@
     <state x="470" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1576080428326" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/DrawObject.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="this.Position[i]" language="JAVA" />

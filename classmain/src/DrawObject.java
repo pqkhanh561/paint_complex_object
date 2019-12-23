@@ -24,7 +24,7 @@ public class DrawObject{
 	}
 
 	public DrawObject(ArrayList<MyShape> arrShape, ArrayList<String> func){ 
-		randomColor();	
+		randomColor();
 		this.arrShape = arrShape;
 		this.func = func;
 		this.area = new BalanInverseArea(func);	
@@ -165,9 +165,7 @@ public class DrawObject{
 
 	public void fill(Graphics2D g){	
 		g.setColor(color);
-		for (MyShape shape: arrShape){
-			g.fill(shape.getShape());
-		}
+		g.fill(getArea());
 	}
 	public void draw(Graphics2D g, boolean is_filled){
 		if (this.color==null) is_filled=false;

@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
+import java.awt.geom.Rectangle2D;
 
 public class MyEllipse extends MyShape{
 	private int x, y, x2, y2;
@@ -15,9 +16,11 @@ public class MyEllipse extends MyShape{
 	@Override
 	public Shape getShape(){
 		return(new Ellipse2D.Float(Math.min(x, x2), Math.min(y,y2), Math.abs(x-x2), Math.abs(y-y2)));
+		//return(new Ellipse2D.Double(50,50,150,150));
 	}
 
 	@Override
+	/*
 	public void setLocation(Point offset, Point end){
         end.x += offset.x;
 		end.y += offset.y;
@@ -27,6 +30,16 @@ public class MyEllipse extends MyShape{
         this.x2 = x + diganol.x;
         this.y2 = y + diganol.y;
 
+	}
+*/
+	public void setLocation(Point startPoint, Point endPoint){
+		Point offset = new Point(endPoint.x - startPoint.x, endPoint.y - startPoint.y);
+		int baseX = - this.x + (endPoint.x + offset.x);
+		int baseY = - this.y + (endPoint.y + offset.y);
+		this.x += baseX;
+		this.y += baseY;
+		this.x2 += baseX;
+		this.y2 += baseY;
 	}
 
     public void changeEndPoint(Point p){

@@ -53,7 +53,7 @@ public class Main{
 
 
         public DrawPanel(){
-            DrawObject poly = new DrawObject(new MyRect(new Point(50,50), new Point(150,150)));
+            DrawObject poly = new DrawObject(new MyEllipse(new Point(50,50), new Point(150,150)));
             DrawObject poly1 = new DrawObject(new MyRect(new Point(20,20), new Point(250,250)));
 
             ListObject.add(poly);
@@ -220,7 +220,6 @@ public class Main{
         class ControlPanel extends MouseAdapter{
             @Override
             public void mousePressed(MouseEvent e) {
-                System.out.println(e.getX());
                 if (e.getClickCount()==2){
                     for (DrawObject ob: ListObject){
                         if (ob.contains(e.getPoint()) && selected.contains(ob)==false){
@@ -238,8 +237,7 @@ public class Main{
                 for (DrawObject ob: ListObject){
                     if (ob.contains(e.getPoint())){
                         dragged = ob;
-                        Rectangle bounds = ob.getArea().getBounds();
-                        offset = new Point(bounds.x - e.getX(),bounds.y - e.getY());
+                        offset = new Point(e.getX(),e.getY());
                         dp.repaint();
                         break;
                     }

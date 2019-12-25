@@ -5,7 +5,6 @@ import javax.swing.*;
 import javax.swing.event.PopupMenuListener;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 import static java.lang.Boolean.FALSE;
@@ -34,7 +33,7 @@ public class Main{
                 frame.setLayout(new GridLayout());
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.add(dp);
-                frame.setSize(1500,1500);
+                frame.setSize(1000,1000);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
             }
@@ -212,26 +211,6 @@ public class Main{
             }
         }
 
-        class ResizeHandler implements MouseWheelListener {
-
-            @Override 
-            public void mouseWheelMoved(MouseWheelEvent e) {
-                if (e.getScrollType() == MouseWheelEvent.WHEEL_UNIT_SCROLL) {
-
-                    System.out.println("wheel");
-                    for (DrawObject ob: ListObject){
-                        System.out.println(e.getX());
-                        if (ob.contains(e.getPoint())) {
-                            int amount = e.getWheelRotation() * 5;
-                            System.out.println(amount);
-                            ob.changeEndPoint(new Point(e.getX() + amount, e.getY() + amount));
-                            dp.repaint();
-                        }
-                    }
-
-                }
-            }
-        }
 
         class DoDraw extends MouseAdapter{
             private int start_x, start_y;
@@ -277,13 +256,13 @@ public class Main{
                         }
                     }
                 }
-                if (e.getButton() == MouseEvent.BUTTON2){
+                if (e.getButton() == MouseEvent.BUTTON1){
                     for (DrawObject ob: ListObject){
                         if (ob.contains(e.getPoint())){
                             dragged = ob;
-                            for (int i =0; i< dragged.getarr().size();i++){
-                                Point tmp =new Point();
-                                Rectangle bounds = dragged.getarr().get(i).getShape().getBounds();
+                            for (MyShape shape : ob.getarr()){
+                                Point tmp = new Point();
+                                Rectangle bounds = shape.getShape().getBounds();
                                 tmp.x = bounds.x - e.getX();
                                 tmp.y = bounds.y - e.getY();
                                 offset.add(tmp);
@@ -302,7 +281,7 @@ public class Main{
 
                 }
                 dragged = null;
-           //     offset = null;
+                offset.clear();
             }
 
             @Override

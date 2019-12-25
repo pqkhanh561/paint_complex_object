@@ -5,7 +5,6 @@ import java.awt.geom.Rectangle2D;
 public class MyEllipse extends MyShape{
 	private int x, y, x2, y2;
 
-	//TODO: Set up to draw in paper
 	public MyEllipse(Point start, Point end){
 		this.x = start.x;
 		this.y = start.y;
@@ -16,18 +15,19 @@ public class MyEllipse extends MyShape{
 	@Override
 	public Shape getShape(){
 		return(new Ellipse2D.Float(Math.min(x, x2), Math.min(y,y2), Math.abs(x-x2), Math.abs(y-y2)));
-		//return(new Ellipse2D.Double(50,50,150,150));
 	}
 
 	@Override
 	public void setLocation(Point offset, Point endPoint){
-	//	Point offset = new Point(endPoint.x - startPoint.x, endPoint.y - startPoint.y);
-		int baseX = - this.x + (endPoint.x + offset.x);
-		int baseY = - this.y + (endPoint.y + offset.y);
-		this.x += baseX;
-		this.y += baseY;
-		this.x2 += baseX;
-		this.y2 += baseY;
+		Rectangle rect = new Rectangle(Math.min(x,x2), Math.min(y,y2), Math.abs(x -x2), Math.abs(y-y2));
+		int baseX = - rect.x + (endPoint.x + offset.x);
+		int baseY = - rect.y + (endPoint.y + offset.y);
+		rect.x += baseX;
+		rect.y += baseY;
+		this.x = rect.x;
+		this.y = rect.y;
+		this.x2 = x + rect.width;
+		this.y2 = y + rect.height;
 	}
 
     public void changeEndPoint(Point p){
@@ -35,5 +35,7 @@ public class MyEllipse extends MyShape{
         this.y2 = p.y;
     }
 
-
+	public Point getXY(){
+		return(new Point(x,y));
+	}
 }

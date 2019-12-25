@@ -48,6 +48,7 @@ public class Main{
         static final String ADD = "+";
         static final String SUBTRACT = "-";
         static final String INTERSECT = "^";
+
         ControlPanel cp = new ControlPanel();
         PopClickListener popup = new PopClickListener();
         MouseAdapter do_draw = new DoDraw();
@@ -75,6 +76,11 @@ public class Main{
             JMenuItem drawRect;
             JMenuItem drawEllipse;
 
+            JMenu color;
+            JMenuItem red;
+            JMenuItem green;
+            JMenuItem blue;
+
 
             public PopUpDemo(){
                 clickItem = new JMenu("Operation");
@@ -82,6 +88,9 @@ public class Main{
 
                 draw = new JMenu("Draw");
                 add(draw);
+
+                color = new JMenu("Color");
+                add(color);
 
                 drawRect = new JMenuItem("Rectangle");
                 draw.add(drawRect);
@@ -133,6 +142,33 @@ public class Main{
                     }
                 });
 
+                red = new JMenuItem("Red");
+                color.add(red);
+                red.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        changeColorForDrawObject(255,0,0);
+                    }
+                });
+
+                green = new JMenuItem("Green");
+                color.add(green);
+                green.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        changeColorForDrawObject(0,255,0);
+                    }
+                });
+
+                blue = new JMenuItem("Blue");
+                color.add(blue);
+                blue.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        changeColorForDrawObject(0,0,255);
+                    }
+                });
+
             }
 
             public void doMathForDrawObject(String func){
@@ -146,6 +182,15 @@ public class Main{
                 selected.clear();
                 ListObject.add(tmp);
                 dp.repaint();
+            }
+
+            public void changeColorForDrawObject(int r,int g,int b){
+                for (DrawObject ob:selected){
+                    ob.changeColor(r,g,b);
+                }
+                dp.repaint();
+
+
             }
         }
 
@@ -202,6 +247,7 @@ public class Main{
                     ListObject.add(new DrawObject(new MyRect(new Point(Math.min(start_x, e.getX()), Math.min(start_y, e.getY())) , new Point(e.getX(), e.getY()))));
                 }
             }
+
             public void mouseReleased(MouseEvent e){
                 dp.removeMouseListener(do_draw);
                 dp.removeMouseMotionListener(do_draw);
@@ -270,7 +316,6 @@ public class Main{
             }
 
         }
-
 
 
         @Override

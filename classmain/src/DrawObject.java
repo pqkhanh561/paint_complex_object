@@ -30,9 +30,7 @@ public class DrawObject{
 		this.area = new BalanInverseArea(func);	
 	}
 
-	public void setColor(Color color){
-		this.color = color;
-	}
+
 
 	public Color getColor(){
 		return(color);
@@ -47,117 +45,16 @@ public class DrawObject{
 		this.color = new Color(r,g,b);
 
 	}
+
+	public void changeColor(int r, int g, int b){
+		this.color = new Color(r,g,b);
+	}
 	
     public void changeEndPoint(Point p){
         arrShape.get(0).changeEndPoint(p);
 		this.area = new BalanInverseArea(func);
     };
 
-
-	public class BalanInverseArea {
-		private Area balan_area;
-		public BalanInverseArea(ArrayList<String> Infix){
-			if (Infix.size() > 1){
-				ArrayList<String> postfix = changeToInverse(Infix);
-				balan_area = createAreaFromPostfix(postfix);
-			}
-			else{
-				balan_area = new Area(arrShape.get(Integer.parseInt(Infix.get(0))).getShape());
-			}
-		}
-
-		public void update(){
-			if (arrShape.size() > 1){
-				ArrayList<String> postfix = changeToInverse(func);
-				balan_area = createAreaFromPostfix(postfix);
-			}
-			else{
-				balan_area = new Area(arrShape.get(Integer.parseInt(func.get(0))).getShape());
-			}
-
-		}
-
-		private Area getArea(){
-			return(balan_area);
-		}
-
-		private Area do_Math(Area a1, Area a2, String action){
-			if (action == "^"){
-				a1.intersect(a2);
-			}
-			else if (action == "-"){
-				a1.subtract(a2);
-			}
-			else {
-				a1.add(a2);
-			}
-			return(a1);
-
-		}
-		
-		private Area createAreaFromPostfix(ArrayList<String> post){
-			Stack<Area> stack = new Stack<Area>();
-			//System.out.println(arrShape.size());
-			//System.out.println(post);
-			for (String s: post){
-				if (isNumeric(s)){
-					//Push shape to stack
-					stack.push(new Area(arrShape.get(Integer.parseInt(s)).getShape()));
-				}
-				else{
-					Area pop = stack.pop();
-					stack.push(do_Math(pop, stack.pop(), s));
-				}
-			}
-			return(stack.pop());
-		}
-
-
-		private ArrayList<String> changeToInverse(ArrayList<String> Infix){
-			ArrayList<String> res =  new ArrayList<String>();
-			Stack<String> stack = new Stack<String>(); 
-			for (String s : Infix){
-				if (isNumeric(s)){
-					res.add(s);
-				}
-				else if (s != ")"){
-					if (stack.empty()){
-						stack.push(s);
-					}
-					else {
-						/*
-						if (checkImportant(s, stack.peek())){
-							stack.push(s);
-						}
-						else{
-							res.add(stack.pop());
-							stack.push(s);
-						}
-						 */
-						stack.push(s);
-					}
-				}
-				else { //")"
-					while (stack.peek() != "("){
-						res.add(stack.pop());
-					}
-					stack.pop();
-				}
-
-			}
-			if (stack.empty() == false) res.add(stack.pop());
-			return(res);	
-		}
-		
-
-		//check if s1 > s2
-		private boolean checkImportant(String s1, String s2){
-			if (s1 == "(" && s2 == "(") return true;
-			if (s1 == "(") return false;
-			return false;
-		}
-	}	
-	
 	public Area getArea(){
 		return(area.getArea()); 
 	};	
@@ -235,8 +132,115 @@ public class DrawObject{
 		func_tmp = mark_number_again(func_tmp);
 		DrawObject tmp = new DrawObject(arrShape_tmp, func_tmp);
 		while (tmp.getColor() == this.color || tmp.getColor() == shape.getColor()){
-			tmp.randomColor();	
+			tmp.randomColor();
 		}	
 		return(tmp);
-	}	
+	}
+
+
+
+	public class BalanInverseArea {
+		private Area balan_area;
+		public BalanInverseArea(ArrayList<String> Infix){
+			if (Infix.size() > 1){
+				ArrayList<String> postfix = changeToInverse(Infix);
+				balan_area = createAreaFromPostfix(postfix);
+			}
+			else{
+				balan_area = new Area(arrShape.get(Integer.parseInt(Infix.get(0))).getShape());
+			}
+		}
+
+		public void update(){
+			if (arrShape.size() > 1){
+				ArrayList<String> postfix = changeToInverse(func);
+				balan_area = createAreaFromPostfix(postfix);
+			}
+			else{
+				balan_area = new Area(arrShape.get(Integer.parseInt(func.get(0))).getShape());
+			}
+
+		}
+
+		private Area getArea(){
+			return(balan_area);
+		}
+
+		private Area do_Math(Area a1, Area a2, String action){
+			if (action == "^"){
+				a1.intersect(a2);
+			}
+			else if (action == "-"){
+				a1.subtract(a2);
+			}
+			else {
+				a1.add(a2);
+			}
+			return(a1);
+
+		}
+
+		private Area createAreaFromPostfix(ArrayList<String> post){
+			Stack<Area> stack = new Stack<Area>();
+			//System.out.println(arrShape.size());
+			//System.out.println(post);
+			for (String s: post){
+				if (isNumeric(s)){
+					//Push shape to stack
+					stack.push(new Area(arrShape.get(Integer.parseInt(s)).getShape()));
+				}
+				else{
+					Area pop = stack.pop();
+					stack.push(do_Math(pop, stack.pop(), s));
+				}
+			}
+			return(stack.pop());
+		}
+
+
+		private ArrayList<String> changeToInverse(ArrayList<String> Infix){
+			ArrayList<String> res =  new ArrayList<String>();
+			Stack<String> stack = new Stack<String>();
+			for (String s : Infix){
+				if (isNumeric(s)){
+					res.add(s);
+				}
+				else if (s != ")"){
+					if (stack.empty()){
+						stack.push(s);
+					}
+					else {
+						/*
+						if (checkImportant(s, stack.peek())){
+							stack.push(s);
+						}
+						else{
+							res.add(stack.pop());
+							stack.push(s);
+						}
+						 */
+						stack.push(s);
+					}
+				}
+				else { //")"
+					while (stack.peek() != "("){
+						res.add(stack.pop());
+					}
+					stack.pop();
+				}
+
+			}
+			if (stack.empty() == false) res.add(stack.pop());
+			return(res);
+		}
+
+
+		//check if s1 > s2
+		private boolean checkImportant(String s1, String s2){
+			if (s1 == "(" && s2 == "(") return true;
+			if (s1 == "(") return false;
+			return false;
+		}
+	}
+
 }

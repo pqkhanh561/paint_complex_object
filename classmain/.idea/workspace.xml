@@ -5,8 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DrawObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DrawObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyEllipse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyEllipse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyRect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyRect.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,71 +18,69 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DrawObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="178" lean-forward="true" selection-start-line="178" selection-end-line="178" />
+            <state relative-caret-position="294">
+              <caret line="48" column="27" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#890#891#0" expanded="true" />
-                <element signature="e#915#916#0" expanded="true" />
-                <element signature="e#942#943#0" expanded="true" />
-                <element signature="e#962#963#0" expanded="true" />
-                <element signature="e#1928#1929#0" expanded="true" />
-                <element signature="e#1955#1956#0" expanded="true" />
-                <element signature="e#2742#2750#0" expanded="true" />
-                <element signature="e#2788#2796#0" expanded="true" />
-                <element signature="e#3557#3558#0" expanded="true" />
-                <element signature="e#3587#3588#0" expanded="true" />
-                <element signature="e#3625#3626#0" expanded="true" />
-                <element signature="e#3666#3667#0" expanded="true" />
-                <element signature="e#4100#4101#0" expanded="true" />
-                <element signature="e#4123#4124#0" expanded="true" />
+                <element signature="e#947#948#0" expanded="true" />
+                <element signature="e#967#968#0" expanded="true" />
+                <element signature="e#1148#1149#0" expanded="true" />
+                <element signature="e#1184#1185#0" expanded="true" />
+                <element signature="e#1272#1273#0" expanded="true" />
+                <element signature="e#1302#1303#0" expanded="true" />
+                <element signature="e#1340#1341#0" expanded="true" />
+                <element signature="e#1381#1382#0" expanded="true" />
+                <element signature="method#setLocation#0;class#DrawObject#0" />
+                <element signature="e#1857#1858#0" expanded="true" />
+                <element signature="e#1880#1881#0" expanded="true" />
+                <element signature="e#1918#1919#0" expanded="true" />
+                <element signature="e#1937#1938#0" expanded="true" />
+                <element signature="method#isNumeric#0;class#DrawObject#0" />
                 <element signature="method#mark_number_again#0;class#DrawObject#0" />
-                <element signature="method#do_math#0;class#DrawObject#0" />
+                <element signature="e#3874#3875#0" expanded="true" />
+                <element signature="e#3901#3902#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://D:/Program/Java/lib/src.zip!/java.desktop/sun/java2d/SunGraphics2D.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="1758" selection-start-line="1758" selection-end-line="1758" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="277" lean-forward="true" selection-start-line="277" selection-end-line="277" />
+            <state relative-caret-position="331">
+              <caret line="325" column="22" selection-start-line="325" selection-start-column="22" selection-end-line="325" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1552#1559#0" expanded="true" />
-                <element signature="e#1625#1637#0" expanded="true" />
-                <element signature="class#PopUpDemo#0;class#DrawPanel#0;class#Main#0" />
-                <element signature="e#3423#3424#0" expanded="true" />
-                <element signature="e#3500#3501#0" expanded="true" />
-                <element signature="e#3781#3782#0" expanded="true" />
-                <element signature="e#3853#3854#0" expanded="true" />
-                <element signature="e#4158#4159#0" expanded="true" />
-                <element signature="e#4236#4237#0" expanded="true" />
+                <element signature="method#main#0;class#Main#0" />
+                <element signature="method#gui#0;class#Main#0" />
+                <element signature="e#3639#3640#0" expanded="true" />
+                <element signature="e#3716#3717#0" expanded="true" />
+                <element signature="e#3997#3998#0" expanded="true" />
+                <element signature="e#4069#4070#0" expanded="true" />
+                <element signature="e#4374#4375#0" expanded="true" />
+                <element signature="e#4452#4453#0" expanded="true" />
+                <element signature="e#4705#4706#0" expanded="true" />
+                <element signature="e#4786#4787#0" expanded="true" />
+                <element signature="e#5047#5048#0" expanded="true" />
+                <element signature="e#5128#5129#0" expanded="true" />
+                <element signature="e#5389#5390#0" expanded="true" />
+                <element signature="e#5470#5471#0" expanded="true" />
+                <element signature="class#PopClickListener#0;class#DrawPanel#0;class#Main#0" />
+                <element signature="method#mousePressed#0;class#PopClickListener#0;class#DrawPanel#0;class#Main#0" />
+                <element signature="method#mouseReleased#0;class#PopClickListener#0;class#DrawPanel#0;class#Main#0" />
+                <element signature="method#doPop#0;class#PopClickListener#0;class#DrawPanel#0;class#Main#0" />
                 <element signature="class#ResizeHandler#0;class#DrawPanel#0;class#Main#0" />
                 <element signature="class#DoDraw#0;class#DrawPanel#0;class#Main#0" />
+                <element signature="method#mousePressed#0;class#DoDraw#0;class#DrawPanel#0;class#Main#0" />
+                <element signature="method#mouseReleased#0;class#DoDraw#0;class#DrawPanel#0;class#Main#0" />
+                <element signature="method#mouseDragged#0;class#DoDraw#0;class#DrawPanel#0;class#Main#0" />
+                <element signature="class#ControlPanel#0;class#DrawPanel#0;class#Main#0" />
+                <element signature="method#mouseReleased#0;class#ControlPanel#0;class#DrawPanel#0;class#Main#0" />
+                <element signature="method#mouseDragged#0;class#ControlPanel#0;class#DrawPanel#0;class#Main#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://D:/Program/Java/lib/src.zip!/java.desktop/java/awt/AWTEventMulticaster.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="286" selection-start-line="286" selection-end-line="286" />
             </state>
           </provider>
         </entry>
@@ -92,8 +88,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MyRect.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="221">
+              <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,37 +98,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MyEllipse.java">
+        <entry file="file://$PROJECT_DIR$/src/MyShape.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://D:/Program/Java/lib/src.zip!/java.desktop/java/awt/Component.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="5011" selection-start-line="5011" selection-end-line="5011" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://D:/Program/Java/lib/src.zip!/java.desktop/java/awt/Container.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="2320" selection-start-line="2320" selection-end-line="2320" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://D:/Program/Java/lib/src.zip!/java.desktop/javax/swing/JComponent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="793" selection-start-line="793" selection-end-line="793" />
+            <state relative-caret-position="170">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -140,8 +109,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/out/production/classmain/MyRect.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="459">
+              <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/out/production/classmain/MyEllipse.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://D:/Program/Java/lib/src.zip!/java.desktop/javax/swing/JComponent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="12359">
+              <caret line="793" selection-start-line="793" selection-end-line="793" />
             </state>
           </provider>
         </entry>
@@ -187,8 +174,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -232,7 +219,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1577249890150" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1577258743617" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../refer/Resize.java" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -311,7 +298,7 @@
     <frame x="-8" y="0" width="1552" height="848" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49581006" visible="true" weight="0.32171583" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49581006" visible="true" weight="0.3264075" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -454,6 +441,12 @@
           </properties>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>46</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -476,27 +469,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/MyShape.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/classmain/Main.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="103" column="58" selection-start-line="103" selection-start-column="58" selection-end-line="103" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/classmain/MyRect.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/out/production/classmain/DrawObject.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -528,16 +500,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/classmain/MyShape.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#402#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MyEllipse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
@@ -562,73 +524,124 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyRect.java">
+    <entry file="file://$PROJECT_DIR$/out/production/classmain/MyRect.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="459">
+          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/classmain/MyEllipse.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="jar://D:/Program/Java/lib/src.zip!/java.desktop/javax/swing/JComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
+        <state relative-caret-position="12359">
           <caret line="793" selection-start-line="793" selection-end-line="793" />
         </state>
       </provider>
     </entry>
     <entry file="jar://D:/Program/Java/lib/src.zip!/java.desktop/sun/java2d/SunGraphics2D.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="1758" selection-start-line="1758" selection-end-line="1758" />
+        <state relative-caret-position="212">
+          <caret line="1763" column="32" selection-start-line="1763" selection-start-column="32" selection-end-line="1763" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DrawObject.java">
+    <entry file="file://$PROJECT_DIR$/out/production/classmain/Main.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="178" lean-forward="true" selection-start-line="178" selection-end-line="178" />
+        <state relative-caret-position="391">
+          <caret line="103" column="58" selection-start-line="103" selection-start-column="58" selection-end-line="103" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/classmain/MyShape.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyShape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyRect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#890#891#0" expanded="true" />
-            <element signature="e#915#916#0" expanded="true" />
-            <element signature="e#942#943#0" expanded="true" />
-            <element signature="e#962#963#0" expanded="true" />
-            <element signature="e#1928#1929#0" expanded="true" />
-            <element signature="e#1955#1956#0" expanded="true" />
-            <element signature="e#2742#2750#0" expanded="true" />
-            <element signature="e#2788#2796#0" expanded="true" />
-            <element signature="e#3557#3558#0" expanded="true" />
-            <element signature="e#3587#3588#0" expanded="true" />
-            <element signature="e#3625#3626#0" expanded="true" />
-            <element signature="e#3666#3667#0" expanded="true" />
-            <element signature="e#4100#4101#0" expanded="true" />
-            <element signature="e#4123#4124#0" expanded="true" />
-            <element signature="method#mark_number_again#0;class#DrawObject#0" />
-            <element signature="method#do_math#0;class#DrawObject#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="277" lean-forward="true" selection-start-line="277" selection-end-line="277" />
+        <state relative-caret-position="331">
+          <caret line="325" column="22" selection-start-line="325" selection-start-column="22" selection-end-line="325" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1552#1559#0" expanded="true" />
-            <element signature="e#1625#1637#0" expanded="true" />
-            <element signature="class#PopUpDemo#0;class#DrawPanel#0;class#Main#0" />
-            <element signature="e#3423#3424#0" expanded="true" />
-            <element signature="e#3500#3501#0" expanded="true" />
-            <element signature="e#3781#3782#0" expanded="true" />
-            <element signature="e#3853#3854#0" expanded="true" />
-            <element signature="e#4158#4159#0" expanded="true" />
-            <element signature="e#4236#4237#0" expanded="true" />
+            <element signature="method#main#0;class#Main#0" />
+            <element signature="method#gui#0;class#Main#0" />
+            <element signature="e#3639#3640#0" expanded="true" />
+            <element signature="e#3716#3717#0" expanded="true" />
+            <element signature="e#3997#3998#0" expanded="true" />
+            <element signature="e#4069#4070#0" expanded="true" />
+            <element signature="e#4374#4375#0" expanded="true" />
+            <element signature="e#4452#4453#0" expanded="true" />
+            <element signature="e#4705#4706#0" expanded="true" />
+            <element signature="e#4786#4787#0" expanded="true" />
+            <element signature="e#5047#5048#0" expanded="true" />
+            <element signature="e#5128#5129#0" expanded="true" />
+            <element signature="e#5389#5390#0" expanded="true" />
+            <element signature="e#5470#5471#0" expanded="true" />
+            <element signature="class#PopClickListener#0;class#DrawPanel#0;class#Main#0" />
+            <element signature="method#mousePressed#0;class#PopClickListener#0;class#DrawPanel#0;class#Main#0" />
+            <element signature="method#mouseReleased#0;class#PopClickListener#0;class#DrawPanel#0;class#Main#0" />
+            <element signature="method#doPop#0;class#PopClickListener#0;class#DrawPanel#0;class#Main#0" />
             <element signature="class#ResizeHandler#0;class#DrawPanel#0;class#Main#0" />
             <element signature="class#DoDraw#0;class#DrawPanel#0;class#Main#0" />
+            <element signature="method#mousePressed#0;class#DoDraw#0;class#DrawPanel#0;class#Main#0" />
+            <element signature="method#mouseReleased#0;class#DoDraw#0;class#DrawPanel#0;class#Main#0" />
+            <element signature="method#mouseDragged#0;class#DoDraw#0;class#DrawPanel#0;class#Main#0" />
+            <element signature="class#ControlPanel#0;class#DrawPanel#0;class#Main#0" />
+            <element signature="method#mouseReleased#0;class#ControlPanel#0;class#DrawPanel#0;class#Main#0" />
+            <element signature="method#mouseDragged#0;class#ControlPanel#0;class#DrawPanel#0;class#Main#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DrawObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="48" column="27" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#947#948#0" expanded="true" />
+            <element signature="e#967#968#0" expanded="true" />
+            <element signature="e#1148#1149#0" expanded="true" />
+            <element signature="e#1184#1185#0" expanded="true" />
+            <element signature="e#1272#1273#0" expanded="true" />
+            <element signature="e#1302#1303#0" expanded="true" />
+            <element signature="e#1340#1341#0" expanded="true" />
+            <element signature="e#1381#1382#0" expanded="true" />
+            <element signature="method#setLocation#0;class#DrawObject#0" />
+            <element signature="e#1857#1858#0" expanded="true" />
+            <element signature="e#1880#1881#0" expanded="true" />
+            <element signature="e#1918#1919#0" expanded="true" />
+            <element signature="e#1937#1938#0" expanded="true" />
+            <element signature="method#isNumeric#0;class#DrawObject#0" />
+            <element signature="method#mark_number_again#0;class#DrawObject#0" />
+            <element signature="e#3874#3875#0" expanded="true" />
+            <element signature="e#3901#3902#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -175,9 +175,11 @@ public class DrawObject{
 		if (is_filled) this.fill(g);
 		g.draw(this.getArea());	
 	}
-	public void setLocation(Point startPoint, Point endPoint){
+	public void setLocation(ArrayList<Point> startPoint, Point endPoint){
+
 		for (MyShape shape: arrShape){
-			shape.setLocation(startPoint, endPoint);
+
+			shape.setLocation(startPoint.get(arrShape.indexOf(shape)), endPoint);
 		}
 		area.update();
 	}

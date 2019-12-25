@@ -3,7 +3,12 @@ import java.awt.Rectangle;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.PopupMenuListener;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+import static java.lang.Boolean.FALSE;
 
 public class Main{
     JFrame frame;
@@ -48,7 +53,8 @@ public class Main{
         MouseAdapter do_draw = new DoDraw();
         private int shape_name;
         private DrawObject dragged;
-        private Point offset;
+
+        private ArrayList<Point> offset = new ArrayList<Point>();
         private ArrayList<DrawObject> selected = new ArrayList<DrawObject>();
 
 
@@ -225,35 +231,42 @@ public class Main{
                         }
                     }
                 }
-
-                for (DrawObject ob: ListObject){
-                    if (ob.contains(e.getPoint())){
-                        dragged = ob;
-						Rectangle bounds = ob.getArea().getBounds();
-						offset = new Point(bounds.x - e.getX(),bounds.y - e.getY());
-                       // offset = new Point(e.getX(),e.getY());
-                        dp.repaint();
-                        break;
-                    }
+                if (e.getButton() == MouseEvent.BUTTON2){
+                    for (DrawObject ob: ListObject){
+                        if (ob.contains(e.getPoint())){
+                            dragged = ob;
+                            for (int i =0; i< dragged.getarr().size();i++){
+                                Point tmp =new Point();
+                                Rectangle bounds = dragged.getarr().get(i).getShape().getBounds();
+                                tmp.x = bounds.x - e.getX();
+                                tmp.y = bounds.y - e.getY();
+                                offset.add(tmp);
+                            }
+                            dp.repaint();
+                        }
                 }
-                dragged = null; //disable move
+                }
+             //   dragged = null; //disable move
             }
 
             @Override
             public void mouseReleased(MouseEvent e) {
                 if (dragged != null) {
                     dp.repaint();
+
                 }
                 dragged = null;
-                offset = null;
+           //     offset = null;
             }
 
             @Override
             public void mouseDragged(MouseEvent e) {
                 if (dragged != null && offset !=null){
-                    dragged.setLocation(offset, e.getPoint());
+                    dragged.setLocation(offset,e.getPoint());
                     dp.repaint();
                 }
+
+
             }
 
         }

@@ -188,7 +188,7 @@ public class DrawObject{
 				}
 				else{
 					Area pop = stack.pop();
-					stack.push(do_Math(pop, stack.pop(), s));
+					stack.push(do_Math(stack.pop(), pop, s));
 				}
 			}
 			return(stack.pop());

@@ -138,8 +138,7 @@ public class Main{
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         doMathForDrawObject(INTERSECT);
-                    }
-                });
+                    } });
 
                 red = new JMenuItem("Red");
                 color.add(red);
@@ -188,8 +187,6 @@ public class Main{
                     ob.changeColor(r,g,b);
                 }
                 dp.repaint();
-
-
             }
         }
 
@@ -269,9 +266,9 @@ public class Main{
                             }
                             dp.repaint();
                         }
+                    }
                 }
-                }
-             //   dragged = null; //disable move
+                //   dragged = null; //disable move
             }
 
             @Override
@@ -290,8 +287,6 @@ public class Main{
                     dragged.setLocation(offset,e.getPoint());
                     dp.repaint();
                 }
-
-
             }
 
         }

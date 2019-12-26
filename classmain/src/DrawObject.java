@@ -106,9 +106,7 @@ public class DrawObject{
 		for (int i =0; i<list.size(); i++){
 			if (isNumeric(list.get(i))){
 				new_index+=1;
-				//list.replace(str,Integer.toString(new_index));
 				list.set(i, Integer.toString(new_index));
-				//str = Integer.toString(new_index);
 			}
 		}
 		return(list);
@@ -136,7 +134,6 @@ public class DrawObject{
 		}	
 		return(tmp);
 	}
-
 
 
 	public class BalanInverseArea {

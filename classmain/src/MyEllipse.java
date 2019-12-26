@@ -34,8 +34,4 @@ public class MyEllipse extends MyShape{
         this.x2 = p.x;
         this.y2 = p.y;
     }
-
-	public Point getXY(){
-		return(new Point(x,y));
-	}
 }
